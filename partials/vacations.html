@@ -1,0 +1,71 @@
+
+<hr/>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Ingrese un criterio de busqueda...
+      <div class="sw-search" >
+            <div class="nav-search" id="nav-search">
+                     <span class="input-icon">
+                        <input placeholder="" class="nav-search-input" ng-model="filterVacation" ng-change="resetLimit();"  autocomplete="off" type="text" style="width:300px;" focus>
+                        <i class="search-icon fa fa-search nav-search-icon"></i>
+                    </span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<section class="styleguide__table">
+  <div class="code-sample">
+
+    <table class="table-4">
+     <colgroup>
+              <col span="1">
+              <col span="1">
+              <col span="1">
+              <col span="1">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Fecha Solicitud</th>
+        <th>Estado</th>
+        <th></th>
+      </tr>
+    </thead>
+
+     <tbody>
+          <tr ng-repeat="c in vacations | filter:filterVacation | orderBy:'-id'" id="{{c.processId}}" animate-on-change='c.employee + c.approved + c.requestDate' ng-animate=" 'animate'">
+            <td data-th="Nombre">{{c.employee}}</td>
+            <td data-th="Fecha Solicitud">{{c.requestDate}}</td>
+
+            <td data-th="Estado" ng-class="c.approved">
+
+                <div>{{c.approved}}</div>
+            </td>
+
+
+            <td data-th="Detalle" style="width:100px">
+                <div class="btn-group">
+                 <button type="button" class="btn btn-default fa fa-edit" ng-click="open(c);"></button>
+                </div>
+            </td>
+
+          </tr>
+          
+    </tbody>
+
+
+
+
+
+
+    </table>
+
+</div>
+</section>
+</div>
+
+              

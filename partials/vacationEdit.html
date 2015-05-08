@@ -1,0 +1,60 @@
+    <button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Detalle [ID: {{vacation.processId}}]</h3>
+    </div>
+    <div class="modal-body">
+        <form name="vacation_form" class="form-horizontal" role="form" novalidate>
+            <form-element label="NOMBRE" mod="vacation">
+                <input type="text" class="form-control" name="nombre" placeholder="NOMBRE" ng-model="vacation.employee" ng-disabled="true" focus/>
+            </form-element>
+
+
+
+
+             <form-element label="FECHA INICIO" mod="vacation">
+                <input type="text" class="form-control" name="fecha_inicio" placeholder="FECHA INICIO" ng-model="vacation.beginDate" ng-disabled="true"  focus/>
+            </form-element>
+
+             <form-element label="FECHA FIN" mod="vacation">
+                <input type="text" class="form-control" name="nombre" placeholder="FECHA FIN" ng-model="vacation.endDate" ng-disabled="true" focus/>
+            </form-element>
+
+            <form-element label="FECHA SOLICITUD" mod="vacation">
+                <input type="text" class="form-control" name="nombre" placeholder="FECHA SOLICITUD" ng-model="vacation.requestDate" ng-disabled="true" focus/>
+            </form-element>
+
+            <form-element label="FECHA ULTIMAS VACACIONES" mod="vacation">
+                <input type="text" class="form-control" name="nombre" placeholder="FECHA ULTIMA SOLICITUD" ng-model="vacation.lastVacationOn" ng-disabled="true"  focus/>
+            </form-element>
+
+            <form-element label="ESTADO" mod="vacation">
+                <input type="text" class="form-control" name="nombre" placeholder="ESTADO" ng-model="vacation.approved" ng-disabled="true"  focus/>
+            </form-element>
+
+
+            <div class="space"></div>
+            <div class="space-4"></div>
+            <div class="modal-footer">
+                <form-element label="">
+                    <div class="text-right">
+                    <button ng-disabled="vacation.approved != 'Pendiente'" ng-click="respond(vacation,false);"
+                                
+                                class="btn btn-sm btn-primary"
+                                >
+                            <i class="ace-icon"></i>{{buttonTextRE}}
+                        </button>
+                       
+                        <button  ng-disabled="vacation.approved != 'Pendiente'" ng-click="respond(vacation,true);"
+                                
+                                class="btn btn-sm btn-primary"
+                                type="submit">
+                            <i class="ace-icon fa fa-check"></i>{{buttonTextAP}}
+                        </button>
+                    </div>
+                </form-element>
+            </div>
+        </form>
+    </div>
+
